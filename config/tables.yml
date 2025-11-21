@@ -1,0 +1,576 @@
+tables:
+- id: 32-10-0045-01
+  name: Farm cash receipts, annual
+  theme: Farm Income Accounts
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210004501
+  notes: Market receipts and program payments by commodity and province.
+  derived: []
+  active: true
+
+- id: 32-10-0046-01
+  name: Farm cash receipts, quarterly
+  theme: Farm Income Accounts
+  frequency: Quarterly
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210004601
+  notes: Quarterly farm cash receipts by province.
+  derived: []
+  active: true
+
+- id: 32-10-0052-01
+  name: Net farm income, by components
+  theme: Farm Income Accounts
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005201
+  notes: Components of realized and total net farm income including receipts, expenses,
+    depreciation and inventory changes.
+  derived: []
+  active: true
+
+- id: 32-10-0106-01
+  name: Direct program payments to producers
+  theme: Farm Income Accounts
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210010601
+  notes: Government support payments to farmers by program type.
+  derived: []
+  active: true
+
+- id: 32-10-0055-01
+  name: Farm income in kind in Canada
+  theme: Farm Income Accounts
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005501
+  notes: Value of farm income in kind, by item, for Canada and provinces; complements farm cash receipts, net farm income and agriculture value added.
+  derived: []
+  active: true
+
+- id: 32-10-0136-01
+  name: Farm operating revenues and expenses (ATDP)
+  theme: Farm Income Accounts
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210013601
+  notes: Detailed breakdown of farm operating revenues and expenses from tax-filed
+    farms.
+  derived: []
+  active: true
+
+- id: 32-10-0056-01
+  name: Balance sheet of the agricultural sector
+  theme: Balance Sheet, Assets & Debt
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005601
+  notes: Farm sector assets, liabilities and equity at year-end.
+  derived: []
+  active: true
+
+- id: 32-10-0051-01
+  name: Farm debt outstanding
+  theme: Balance Sheet, Assets & Debt
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005101
+  notes: Total farm debt by lender type.
+  derived: []
+  active: true
+
+- id: 32-10-0050-01
+  name: Value of farm capital
+  theme: Balance Sheet, Assets & Debt
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005001
+  notes: Value of farmland, buildings, livestock, machinery and equipment.
+  derived: []
+  active: true
+
+- id: 32-10-0047-01
+  name: Value per acre of farmland and buildings
+  theme: Balance Sheet, Assets & Debt
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210004701
+  notes: Average value per acre of farm land and buildings as of July 1.
+  derived: []
+  active: true
+
+- id: 32-10-0078-01
+  name: Farm Product Price Index (FPPI)
+  theme: Prices – Outputs
+  frequency: Monthly, Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007801
+  notes: Price indices for major crop and livestock commodities at the farm gate.
+  derived: []
+  active: true
+
+- id: 32-10-0077-01
+  name: Farm Input Price Index (FIPI)
+  theme: Prices – Inputs
+  frequency: Monthly, Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701
+  notes: Price indices for fertilizer, feed, fuel, machinery and other inputs.
+  derived: []
+  active: true
+
+- id: 18-10-0001-01
+  name: Consumer prices – gasoline
+  theme: Prices – Inputs
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  - Region
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000101
+  notes: Retail gasoline price index.
+  derived: []
+  active: true
+
+- id: 18-10-0002-01
+  name: Consumer prices – diesel fuel
+  theme: Prices – Inputs
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  - Region
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201
+  notes: Retail diesel price index.
+  derived: []
+  active: true
+
+- id: 32-10-0054-01
+  name: Farm capital expenditures
+  theme: Investment & Capital
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210005401
+  notes: Annual capital spending on buildings, land improvements, machinery and equipment.
+  derived: []
+  active: true
+
+- id: 32-10-0157-01
+  name: Cash rents for farmland
+  theme: Land Markets & Rents
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Region
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210015701
+  notes: Reported cash rental rates for farmland by province and region.
+  derived: []
+  active: true
+
+- id: 10-10-0036-01
+  name: Chartered bank lending to agriculture
+  theme: Credit & Financial Conditions
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1010003601
+  notes: Loans outstanding to the agricultural sector and related interest rates. (Currently 404; left for reference.)
+  derived: []
+  active: false
+
+- id: 36-10-0489-01
+  name: Labour productivity and compensation in agriculture
+  theme: Labour, Wages & Employment
+  frequency: Annual
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610048901
+  notes: Measures of labour productivity and compensation in the agriculture industry.
+  derived: []
+  active: true
+
+- id: 32-10-0422-01
+  name: Census of Agriculture – hired labour expenses
+  theme: Labour, Wages & Employment
+  frequency: Every 5 years
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Sub-provincial
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210042201
+  notes: Census-based measures of hired labour expenses and farm labour structure.
+  derived: []
+  active: true
+
+- id: 32-10-0156-01
+  name: Number of farms, by type
+  theme: Farm Structure & Ownership
+  frequency: Annual or Census-linked
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210015601
+  notes: Counts of farms by farm type and province.
+  derived: []
+  active: true
+
+- id: 32-10-0163-01
+  name: Farm size distribution
+  theme: Farm Structure & Ownership
+  frequency: Periodic (Census-linked)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210016301
+  notes: Distribution of farms by acreage and/or revenue classes.
+  derived: []
+  active: true
+
+- id: 32-10-0166-01
+  name: Farm assets and ownership structure
+  theme: Farm Structure & Ownership
+  frequency: Periodic (Census-linked)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210016601
+  notes: Information on ownership vs rental of land and key farm assets.
+  derived: []
+  active: true
+
+- id: 32-10-0048-01
+  name: Agriculture value added account
+  theme: Agriculture Value Added / GDP
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210004801
+  notes: Gross output, intermediate inputs and value added in the agriculture sector.
+  derived: []
+  active: true
+
+- id: 18-10-0004-01
+  name: Consumer Price Index – food
+  theme: Food & Retail Prices
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  - Region
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401
+  notes: Consumer price indices for food and food-related categories.
+  derived: []
+  active: true
+
+- id: 32-10-0240-01
+  name: Operating revenues, Census of Agriculture, 2021
+  theme: Farm Income Accounts
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210024001
+  notes: Operating revenues at census geographies; includes Census Division.
+  derived:
+  - pairs_with:32-10-0241-01
+  active: true
+
+- id: 32-10-0241-01
+  name: Operating expenses, Census of Agriculture, 2021
+  theme: Farm Income Accounts
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210024101
+  notes: Operating expenses at census geographies; includes Census Division.
+  derived:
+  - pairs_with:32-10-0240-01
+  - NET_OP_INCOME
+  - PROFIT_MARGIN
+  active: true
+
+- id: 32-10-0237-01
+  name: Farm capital, Census of Agriculture, 2021
+  theme: Balance Sheet, Assets & Debt
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023701
+  notes: Market value of land, buildings, livestock, machinery & equipment; includes
+    Census Division.
+  derived: []
+  active: true
+
+- id: 32-10-0238-01
+  name: Value of farm machinery and equipment, Census of Agriculture, 2021
+  theme: Balance Sheet, Assets & Debt
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023801
+  notes: Detailed machinery and equipment values; includes Census Division.
+  derived: []
+  active: true
+
+- id: 32-10-0236-01
+  name: Farms classified by total farm capital, Census of Agriculture, 2021
+  theme: Farm Structure & Ownership
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023601
+  notes: Distribution of farms by capital class; includes Census Division.
+  derived: []
+  active: true
+
+- id: 32-10-0239-01
+  name: Farms classified by total operating revenues, Census of Agriculture, 2021
+  theme: Farm Structure & Ownership
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023901
+  notes: Distribution of farms by operating revenue class; includes Census Division.
+  derived: []
+  active: true
+
+- id: 32-10-0242-01
+  name: Direct sales of agricultural products to consumers, Census of Agriculture,
+    2021
+  theme: Farm Income Accounts
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210024201
+  notes: Value/counts of direct-to-consumer sales channels; includes Census Division.
+  derived:
+  - pairs_with:32-10-0240-01
+  - DIRECT_SALES_SHARE
+  active: true
+
+- id: 32-10-0243-01
+  name: Paid labour, Census of Agriculture, 2021
+  theme: Labour, Wages & Employment
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210024301
+  notes: Measures of paid labour (e.g., hired workers) at census geographies; includes
+    Census Division.
+  derived: []
+  active: true
+
+- id: 32-10-0213-01
+  name: Total income of farm families, by source of income
+  theme: Farm Family Income
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210021301
+  notes: Income of farm families by source (net farm operating income, wages, investment income, pensions, etc.).
+  derived: []
+  active: true
+
+- id: 32-10-0234-01
+  name: Land tenure, Census of Agriculture, 2021
+  theme: Farm Structure & Ownership
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023401
+  notes: Farmland area owned, rented or crop-shared by farms, by geography.
+  derived: []
+  active: true
+
+- id: 32-10-0235-01
+  name: Farms classified by operating arrangement, Census of Agriculture, 2021
+  theme: Farm Structure & Ownership
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210023501
+  notes: Number of farms by business structure (sole proprietor, partnership, family corporation, etc.).
+  derived: []
+  active: true
+
+- id: 32-10-0436-01
+  name: Farms classified by total gross farm receipts, Census of Agriculture, 2011
+    and 2016 (inactive)
+  theme: Farm Income Accounts
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210043601
+  notes: Distribution of farms by gross receipts; includes Census Division (historical).
+  derived: []
+  active: false
+
+- id: 32-10-0437-01
+  name: Farm capital, Census of Agriculture, 2011 and 2016 (inactive)
+  theme: Balance Sheet, Assets & Debt
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210043701
+  notes: Farm capital by census geographies; includes Census Division (historical).
+  derived: []
+  active: false
+
+- id: 32-10-0438-01
+  name: Operating expenses, Census of Agriculture, 2011 and 2016 (inactive)
+  theme: Farm Income Accounts
+  frequency: Every 5 years (Census)
+  geo_levels:
+  - Canada
+  - Province/Territory
+  - Census division
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210043801
+  notes: Operating expenses by census geographies; includes Census Division (historical).
+  derived: []
+  active: false
+
+# -----------------------------
+# Transportation & Exports
+# -----------------------------
+
+- id: 32-10-0049-01
+  name: Farm operating expenses and depreciation charges
+  theme: Transportation & Exports
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210004901
+  notes: Farm operating expenses and rebates, including marketing expenses (freight and trucking), for Canada and the provinces.
+  derived: []
+  active: true
+
+- id: 18-10-0281-01
+  name: For-hire motor carrier freight services price index
+  theme: Transportation & Exports
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810028101
+  notes: For-hire motor carrier freight services price index (truck freight rates), 2021=100, monthly.
+  derived: []
+  active: true
+
+- id: 23-10-0291-01
+  name: Trucking financial statistics, by industry group
+  theme: Transportation & Exports
+  frequency: Annual
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310029101
+  notes: Revenues, expenses and operating ratios for the Canadian for-hire trucking industry, by NAICS industry group.
+  derived: []
+  active: true
+
+- id: 12-10-0177-01
+  name: Canadian international merchandise trade by mode of transport
+  theme: Transportation & Exports
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210017701
+  notes: Monthly international merchandise exports and imports by mode of transport (road, rail, water, air, other), by NAPCS commodity and principal trading partner.
+  derived: []
+  active: true
+
+- id: 23-10-0216-02
+  name: Railway carloadings statistics, by commodity, monthly
+  theme: Transportation & Exports
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  - Region
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310021602
+  notes: Monthly railway industry carloading statistics for non-intermodal traffic, total carloads and tonnes, by commodity for Canada, Eastern Division and Western Division.
+  derived: []
+  active: true
+
+- id: 23-10-0142-01
+  name: Origin and destination of transported commodities (CFAF)
+  theme: Transportation & Exports
+  frequency: Annual
+  geo_levels:
+  - Canada
+  - Province/Territory
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310014201
+  notes: Canadian Freight Analysis Framework estimates of tonnage, value and tonne-kilometres by origin and destination, by commodity type and mode of transport.
+  derived: []
+  active: true
+
+- id: 23-10-0269-01
+  name: Transportation activity indicators
+  theme: Transportation & Exports
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310026901
+  notes: Monthly indicators of transportation activity for key modes (rail, marine, air and truck), including freight volumes and movements.
+  derived: []
+  active: true
+
+- id: 23-10-0271-01
+  name: Transportation supply chain performance indicators
+  theme: Transportation & Exports
+  frequency: Monthly
+  geo_levels:
+  - Canada
+  statscan_url: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310027101
+  notes: Monthly transportation supply chain performance indicators (for example, dwell times, transit time and reliability) for major trade corridors and ports.
+  derived: []
+  active: true
