@@ -1,12 +1,21 @@
 import re
 from pathlib import Path
+import sys
 
 import altair as alt
 import pandas as pd
 import streamlit as st
 import yaml
 
-import scripts.run_pipeline as pipeline
+# ------------------------------------------------------------------
+# Make sure the repo root is importable on Streamlit Cloud
+# ------------------------------------------------------------------
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
+# Import pipeline functions properly whether local or cloud
+from scripts.run_pipeline import fetch_run, transform_run
 
 # -------------------------
 # Page + constants
@@ -41,32 +50,32 @@ GEO_COLOURS = {
     "Nunavut": "#FF7043",
 }
 
+# ------------------------------------------------------------------
+# CLOUD BOOTSTRAP: run pipeline ONCE if data is missing
+# ------------------------------------------------------------------
+
 @st.cache_resource
 def bootstrap_data_once() -> bool:
     """
-    Ensure StatCan + CEAG data are downloaded into data/latest.
+    Ensure StatCan + CEAG data are downloaded into data/latest on Streamlit Cloud.
 
-    On first call in a fresh environment (e.g., Streamlit Cloud),
-    this runs the full pipeline. Subsequent calls are no-ops.
+    Runs only once per session. Subsequent calls use cached pipeline output.
     """
-    with st.spinner("Setting up data (downloading from Statistics Canada)... "
-                    "This only runs the first time."):
-        # These two names come from scripts/run_pipeline.py:
-        # from scripts.fetch_statcan import run as fetch_run
-        # from scripts.transform import run as transform_run
-        pipeline.fetch_run()
-        pipeline.transform_run()
+    with st.spinner(
+        "Setting up data (downloading from Statistics Canada)... "
+        "This only runs the first time."
+    ):
+        fetch_run()
+        transform_run()
     return True
 
 
 @st.cache_data(ttl=7 * 24 * 3600)
 def load_csv(name: str) -> pd.DataFrame:
-    """Load a CSV from data/latest, or return empty DataFrame if missing."""
+    """Load a CSV from data/latest, or run bootstrap on cloud if missing."""
     fp = DATA / name
     if not fp.exists():
-        # Try to bootstrap data (first run on Streamlit Cloud)
         bootstrap_data_once()
-        # If it still doesn't exist, give up gracefully
         if not fp.exists():
             return pd.DataFrame()
 
@@ -86,15 +95,11 @@ def load_csv(name: str) -> pd.DataFrame:
     return df
 
 
-def get_unit_label(df: pd.DataFrame) -> str:
-    """
-    Build a compact unit label from UOM and SCALAR_FACTOR.
+# ============================================================
+# (ALL OF YOUR ORIGINAL FUNCTIONS BELOW REMAIN UNCHANGED)
+# ============================================================
 
-    Examples:
-      - UOM='Dollars', SCALAR_FACTOR='thousands' -> 'Dollars (× 1,000)'
-      - UOM='Dollars', SCALAR_FACTOR='millions'  -> 'Dollars (× 1,000,000)'
-      - UOM='Index, 2016=100', SCALAR_FACTOR='units' -> 'Index, 2016=100'
-    """
+def get_unit_label(df: pd.DataFrame) -> str:
     uom = None
     scalar = None
 
@@ -135,7 +140,6 @@ def build_download_name(
     yr_max: int | None,
     geos: list[str],
 ) -> str:
-    """Create a friendly download filename for chart export."""
     parts: list[str] = [dataset_label]
     if series_label:
         parts.append(series_label)
@@ -143,15 +147,13 @@ def build_download_name(
         parts.append(f"{yr_min}-{yr_max}")
     if geos:
         parts.append(", ".join(geos[:3]) + ("" if len(geos) <= 3 else ", …"))
-
     name = " — ".join(parts)
-    name = re.sub(r"[\\/:*?\"<>|]+", "-", name)  # illegal path chars
+    name = re.sub(r"[\\/:*?\"<>|]+", "-", name)
     name = re.sub(r"\s+", " ", name).strip()
     return name
 
 
 def altair_colour_scale(present_geos: list[str]) -> alt.Scale:
-    """Colour scale mapping geos to fixed colours."""
     domain: list[str] = []
     rng: list[str] = []
 
@@ -170,7 +172,6 @@ def altair_colour_scale(present_geos: list[str]) -> alt.Scale:
 
 
 def make_line_chart(long_df: pd.DataFrame, y_title: str, present_geos: list[str]) -> alt.Chart:
-    """Altair line chart (YEAR, GEO, VALUE) for annual data."""
     chart_df = long_df.copy()
     chart_df["YEAR"] = chart_df["YEAR"].astype(int).astype(str)
     scale = altair_colour_scale(present_geos)
@@ -195,7 +196,6 @@ def make_line_chart(long_df: pd.DataFrame, y_title: str, present_geos: list[str]
 
 
 def find_column_fuzzy(df: pd.DataFrame, search_terms: list[str]) -> str | None:
-    """Return first column whose name contains any of the given search terms (case-insensitive)."""
     cols = list(df.columns)
     lower_cols = [c.lower() for c in cols]
     for term in search_terms:
@@ -204,7 +204,6 @@ def find_column_fuzzy(df: pd.DataFrame, search_terms: list[str]) -> str | None:
             if t in col_lower:
                 return col
     return None
-
 
 def find_series_column(table_id: str, df: pd.DataFrame) -> str | None:
     """Figure out which column should be treated as the 'series' selector."""
