@@ -6,6 +6,8 @@ import pandas as pd
 import streamlit as st
 import yaml
 
+import scripts.run_pipeline as pipeline
+
 # -------------------------
 # Page + constants
 # -------------------------
@@ -39,13 +41,34 @@ GEO_COLOURS = {
     "Nunavut": "#FF7043",
 }
 
+@st.cache_resource
+def bootstrap_data_once() -> bool:
+    """
+    Ensure StatCan + CEAG data are downloaded into data/latest.
+
+    On first call in a fresh environment (e.g., Streamlit Cloud),
+    this runs the full pipeline. Subsequent calls are no-ops.
+    """
+    with st.spinner("Setting up data (downloading from Statistics Canada)... "
+                    "This only runs the first time."):
+        # These two names come from scripts/run_pipeline.py:
+        # from scripts.fetch_statcan import run as fetch_run
+        # from scripts.transform import run as transform_run
+        pipeline.fetch_run()
+        pipeline.transform_run()
+    return True
+
 
 @st.cache_data(ttl=7 * 24 * 3600)
 def load_csv(name: str) -> pd.DataFrame:
     """Load a CSV from data/latest, or return empty DataFrame if missing."""
     fp = DATA / name
     if not fp.exists():
-        return pd.DataFrame()
+        # Try to bootstrap data (first run on Streamlit Cloud)
+        bootstrap_data_once()
+        # If it still doesn't exist, give up gracefully
+        if not fp.exists():
+            return pd.DataFrame()
 
     df = pd.read_csv(fp, low_memory=False)
 
