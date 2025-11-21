@@ -1,0 +1,7 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Ignore ALL data files (we'll keep them local only)
+data/
